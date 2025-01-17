@@ -31,7 +31,7 @@ module "enterprise_scale" {
     "${var.root_id}-dev" = {
       display_name               = "${upper(var.root_id)} DEV"
       parent_management_group_id = "${var.root_id}-landing-zones"
-      subscription_ids           = var.
+      subscription_ids           = var.subscription_id_LZ_DEV
       archetype_config = {
         archetype_id   = "policy"
         parameters     = {}
@@ -41,7 +41,7 @@ module "enterprise_scale" {
     "${var.root_id}-staging" = {
       display_name               = "${upper(var.root_id)} STAGING"
       parent_management_group_id = "${var.root_id}-landing-zones"
-      subscription_ids           = []
+      subscription_ids           = var.subscription_id_LZ_STG
       archetype_config = {
         archetype_id = "policy"
         parameters = {
@@ -58,7 +58,7 @@ module "enterprise_scale" {
     "${var.root_id}-production" = {
       display_name               = "${upper(var.root_id)} PRODUCTION"
       parent_management_group_id = "${var.root_id}-landing-zones"
-      subscription_ids           = []
+      subscription_ids           = var.subscription_id_LZ_PRD
       archetype_config = {
         archetype_id = "policy"
         parameters = {
