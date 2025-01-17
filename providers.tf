@@ -3,9 +3,10 @@
 
 # The following providers are used to enable deployment to one or more 
 # Subscriptions.
-
+# data "azurerm_client_config" "current" {}
 provider "azurerm" {
   features {}
+  subscription_id = var.subscription_id
 }
 
 provider "azurerm" {
